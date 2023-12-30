@@ -1,0 +1,71 @@
+
+
+.Navbar{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #26add6, #0258A0, #b6727a);
+    overflow: hidden;
+
+}
+
+.Navbar_Logo{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Navbar_Logo p{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.Navbar_Menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.Navbar_Item{
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.Navbar_Item:hover{
+    background-color: rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+
+.Item{
+    display: flex;
+    flex-direction: column;
+}
+
+.Item_Link, .Item_Icon{
+    color: rgb(255, 255, 255);
+}
+
+.Item_Link{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.Item_Icon{
+    height: 19px;
+}
+
+

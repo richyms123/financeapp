@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('apps.Usuario.urls')),
     path('',include('apps.Tarjeta.urls')),
+    path('',include('apps.Movimiento.urls')),
 ]

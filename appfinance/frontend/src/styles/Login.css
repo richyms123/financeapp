@@ -1,0 +1,105 @@
+
+.Contenedor_Login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255)
+}
+
+.Form_Login{
+    width: 350px;
+    height: 420px;
+    border-radius: 50px;
+    background: linear-gradient(to bottom right, #26add6, #0258A0, #b6727a);
+    padding: 20px;
+}
+
+.H1_Login{
+    text-align: center;
+    color: rgb(255,255,255);
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.Contenedor_IC-LA{
+    width: 100%;
+    align-items: center;
+    padding: 10px;    
+}
+
+.Label_Login-Rfc{
+    color: rgb(255,255,255);
+    display: inline-block;
+    font-size: 21px;
+    font-weight: 600;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+.Icono_Login-Rfc{
+
+    display: inline-block;
+    position: absolute;
+    color: rgb(255,255,255);
+    width: 23px;
+    height: 23px;
+    top: 309px;
+    left: 40%;
+}
+
+.Input_Login-Rfc{
+    display: inline-block;
+    width: 100%;
+    outline-style: none;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, .2);
+    height: 30px;
+    border-radius: 10px;
+
+}
+
+.Button_Login{
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .2);
+    color: rgb(255,255,255);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    outline-style: none;
+    border: none;
+}
+
+.Button_Login:hover{
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.75);
+}
+
+.Contenedor_Input-Cuenta{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.Input_CrearCuenta{
+    height: 20px;
+    background: transparent;
+    color: rgb(255,255,255);
+    font-size: 15px;
+    border: none;
+}
+
+.Input_CrearCuenta:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    
+}

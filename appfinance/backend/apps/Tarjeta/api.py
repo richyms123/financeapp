@@ -11,7 +11,7 @@ from apps.Tarjeta.serializers import TarjetaSerializer, TarjetaSerializerListar
 def tarjeta_api_view(request):
      if request.method == 'GET':
         tarjeta = Tarjeta.objects.all()  # Obtener todas las tarjetas
-        tarjeta_serializer = TarjetaSerializer(tarjeta, many=True)  # Serializar los datos
+        tarjeta_serializer = TarjetaSerializerListar(tarjeta, many=True)  # Serializar los datos
         return Response(tarjeta_serializer.data, status=status.HTTP_200_OK)  # Respuesta con las tarjetas
      # Crear una nueva tarjeta
      elif request.method == 'POST':
@@ -31,7 +31,7 @@ def tarjeta_detail_api_view(request, pk=None):
     if tarjeta:
         # Obtener detalles de la tarjeta
         if request.method == 'GET':
-            tarjeta_serializer = TarjetaSerializer(tarjeta) # Serializar los datos de la tarjeta
+            tarjeta_serializer = TarjetaSerializerListar(tarjeta) # Serializar los datos de la tarjeta
             return Response(tarjeta_serializer.data, status=status.HTTP_200_OK) # Respuesta con los datos de la tarjeta
         # Actualizar tarjeta
         elif request.method == 'PUT':

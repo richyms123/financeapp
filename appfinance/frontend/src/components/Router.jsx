@@ -1,6 +1,8 @@
+// Librearias
 import { useState } from 'react'
-import Login from '../pages/Login'
-import App from '../pages/App'
+// Componentes
+import Login from '../pages/Login.jsx'
+import App from '../pages/App.jsx'
 
 const Router = () => {
 

@@ -27,9 +27,9 @@ def movimiento_api_view(request):
 @api_view(['POST'])
 @parser_classes([MultiPartParser, JSONParser])
 def transferir_api_view(request):
-    origen = request.data['origen']
-    destino = request.data['destino']
-    cantidad = int(request.data['cantidad'])
+    origen = request.data.get('origen')
+    destino = request.data.get('destino')
+    cantidad = int(request.data.get('cantidad', 0))
 
     tarjeta_origen = Tarjeta.objects.filter(idTarjeta=origen).first()
     tarjeta_destino = Tarjeta.objects.filter(idTarjeta=destino).first()
@@ -48,3 +48,7 @@ def transferir_api_view(request):
             )
             mov.save()
             return Response({'message': 'Transferencia realizada correctamente!'}, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'error': 'Saldo insuficiente en la tarjeta de origen.'}, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        return Response({'error': 'No se encontraron las tarjetas especificadas.'}, status=status.HTTP_404_NOT_FOUND)

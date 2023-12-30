@@ -1,52 +1,97 @@
-.Contenedor_Tarjeta{
-    height: 200px;
-    width: 350px;
-    background: rgb(214, 211, 211);
-    margin: 20px;
-    border-radius: 15px;
-    padding-bottom: 10px;
+.Div{
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+}
 
+
+.Contenedor_Tarjeta{
+    margin: 10px;
+    position: relative;
+    height: 200px;
+    width: 330px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom right, #26add6, #0258A0, #b6727a);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
+.Contenedor_Tarjeta:hover{
+    transform: scale(1.02);
+    
 }
 
 .Contenedor_Compania{
-    padding: 3px;
+    padding: 5px;
     width: 100%;
-    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.55);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
 .Compania{
     width: 100%;
-    text-align: center;
-    height: 33px;
-    font-size: 23px;
+    text-align: left;
+    height: 35px;
+    font-size: 28px;
+    font-weight: 800;
     color: rgb(255,255,255);
     display: inline-block;
+    margin-left: 32px;
     
 }
 
 .Numero{
+    display: inline-block;
+    width: 100%;
     text-align: center;
-    font-size: 25px;
+    font-size: 24px;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
+    color: rgb(255,255,255);
+    font-weight: 600;
 }
 
 .Saldo{
+    display: inline-block;
+    width: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
+    color: rgb(255,255,255);
+}
+
+.Contenedor_Info_FT{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .Fecha{
+    display: inline-block;
     text-align: center;
     font-size: 18px;
+    color: rgb(255,255,255);
+}
+
+.Tipo{
+    display: inline-block;
+    font-size: 20px;
+    color: rgb(255,255,255);
 }
 
 .Img_Logo{
+    width: 23px;
+    height: 23px;
     display: inline-block;
     position: absolute;
-    width: 33px;
-    height: 33px;
+    top: 13px;
+    color: rgb(255,255,255);
     
 }
+

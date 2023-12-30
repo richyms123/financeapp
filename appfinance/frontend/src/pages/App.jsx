@@ -1,13 +1,17 @@
+// Librearias
 import { useEffect, useState } from 'react'
-import Tarjeta from './../components/Tarjeta'
-import Modal from './../components/Modal'
+import PropTypes from 'prop-types'
+// Componentes
+import MenuPrincipal from '../components/MenuPrincipal.jsx'
+import Tarjeta from './../components/Tarjeta.jsx'
+// Estilos
 import '../styles/Principal.css'
 import '../styles/Modal.css'
 import '../styles/Tarjeta.css'
 
 let URL = 'http://localhost:8000/tarjetas_usuario/'
 
-const App = ({ setSession, logout, session }) => {
+const App = ({ logout, session }) => {
 
   const [tarjetas, setTarjetas] = useState([])
   const [showModal, setShowModal] = useState(false)
@@ -41,19 +45,22 @@ const App = ({ setSession, logout, session }) => {
 
   return (
     <div className='Contenedor_Principal'>
-      <button onClick={logout} className='app_Buton'>Logout</button>
-
-      <Tarjeta tarjetas={tarjetas}  onTarjetaClick={handleOpenModal}/>
-      
-      {
-        showModal &&
-        <Modal
-          selectedCard={selectedCard}
-          handleCloseModal={handleCloseModal}
-        />
-      }
+      <MenuPrincipal Logout={logout} />
+      <Tarjeta 
+        tarjetas={tarjetas}  
+        onTarjetaClick={handleOpenModal}
+        selectedCard={selectedCard}
+        handleCloseModal={handleCloseModal}
+        showModal={showModal}
+      />
 
     </div>
   )
+}
+
+App.propTypes = {
+  setSession: PropTypes.func,
+  logout: PropTypes.func.isRequired,
+  session: PropTypes.object.isRequired
 }
 export default App

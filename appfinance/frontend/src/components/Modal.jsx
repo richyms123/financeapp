@@ -1,4 +1,9 @@
+// Librerias
 import { useState } from "react"
+import PropTypes from 'prop-types'
+// SweetAlert
+import Swal from 'sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css'
 
 const Modal =({
     selectedTarjeta,
@@ -26,7 +31,12 @@ const Modal =({
                 setDestinoDatos(data)
             }
             else{
-                throw new Error('Tarjeta no encontrada')
+                let error = await response.json()
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message,
+                })
             }
         }catch(err){
             console.log(err)
@@ -38,7 +48,8 @@ const Modal =({
     const handleTransferir = async () => {
         try{
             setLogin(true)
-            let response = await fetch('http://localhost:8000/transferir/',{
+            let url = 'http://localhost:8000/transferir/';
+            let response = await fetch(url,{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
@@ -48,14 +59,30 @@ const Modal =({
                 })
             })
             if(response.ok){
-                let data = await response.json(data)
+                let data = await response.json()
                 console.log(data)
+                await Swal.fire({
+                    icon: 'success',
+                    title: 'Transferencia exitosa',
+                    text: 'Se transfirieron $' + cantidad + ' a ' + destinoDatos.propietario.nombre + ' ' + destinoDatos.propietario.apellido,
+                })
             }
             else{
-                throw new Error('Tarjeta no encontrada')
+                let error = await response.json()
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error.error,
+                })
+
             }
         }catch(err){
-            console.log(err)
+            Swal.fire({
+                icon: 'error',
+                title: 'Algo salió mal!',
+                text: err,
+            })
+
         }finally{
             setLogin(false)
         }
@@ -103,6 +130,11 @@ const Modal =({
         </div>
 
     )
+}
+
+Modal.propTypes = {
+    selectedTarjeta: PropTypes.number,
+    handleCloseModal: PropTypes.func
 }
 
 export default Modal
